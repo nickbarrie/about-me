@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    height: 100vh;
+}
+
+#info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+#info div {
+    padding: 3rem;
+    background : rgb(160, 219, 216);
+    border-radius: 10px;
+    margin: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+}
