@@ -12,8 +12,8 @@ let data = [
         link: 'https://www.youtube.com/@nickbarrie1014'
     },
     {
-        name: '',
-        link: 28
+        name: 'nickbarrie12@gmail.com',
+        link: "mailto:"
     }
 ];
 
