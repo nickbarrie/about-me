@@ -13,17 +13,16 @@ let data = [
     },
     {
         name: 'nickbarrie12@gmail.com',
-        link: "mailto:"
+        link: 'mailto:nickbarrie12@gmail.com'
     }
 ];
 
 const info = document.querySelector('#info');
 
 let details = data.map(function(item) {
-        return (
-            '<div> <a href=' + item.link + ' target="_blank">' + item.name + '</a></div>'
-    )
-        }
-)
-    
+    return (
+        '<div> <a href="' + item.link + '" target="_blank">' + item.name + '</a></div>'
+    );
+});
+
 info.innerHTML = details.join('\n');
