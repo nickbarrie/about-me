@@ -8,8 +8,8 @@ let data = [
         link: 'https://github.com/nickbarrie'
     },
     {
-        name: 'Youtube',
-        link: 'https://www.youtube.com/@nickbarrie1014'
+        name: 'Mobile: 519-784-0918',
+        link: ''
     },
     {
         name: 'nickbarrie12@gmail.com',

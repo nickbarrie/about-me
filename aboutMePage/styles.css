@@ -64,3 +64,6 @@ body {
     color: #000;
     z-index: 999;
 }
+.centered {
+    text-align: center; /* Center text horizontally */
+}
