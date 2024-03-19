@@ -3,11 +3,29 @@ body, html {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    background-color: #f2f2f2; /* Set background color */
 }
 
-.container {
+body {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#info div {
+    padding: 3rem;
+    background : rgb(160, 219, 216);
+    border-radius: 10px;
+    margin: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 .sidebar {
@@ -26,7 +44,7 @@ body, html {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 25px;
-    color: #ffffff; /* Set text color */
+    color: #131212;
     display: block;
     transition: 0.3s;
 }
@@ -46,13 +64,20 @@ body, html {
     color: #000;
     z-index: 999;
 }
-
+.centered {
+    text-align: center; /* Center text horizontally */
+    color: #000000;
+}
 .content {
     flex: 1;
     padding: 20px;
     background-color: #ffffff; /* Set content background color */
     border-radius: 10px; /* Add border radius */
     margin: 20px; /* Add margin for spacing */
+}
+
+.profile {
+    text-align: center;
 }
 
 .profile-img {
@@ -62,7 +87,3 @@ body, html {
     margin-bottom: 20px; /* Add margin below image */
 }
 
-.centered {
-    text-align: center; /* Center text horizontally */
-    color: #000000; /* Set text color */
-}
