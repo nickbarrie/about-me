@@ -3,29 +3,11 @@ body, html {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2; /* Set background color */
 }
 
-body {
+.container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-#info{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-#info div {
-    padding: 3rem;
-    background : rgb(160, 219, 216);
-    border-radius: 10px;
-    margin: 0.5rem;
-    color: #fff;
-    font-size: 1.2rem;
-    text-align: center;
 }
 
 .sidebar {
@@ -44,7 +26,7 @@ body {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 25px;
-    color: #131212;
+    color: #ffffff; /* Set text color */
     display: block;
     transition: 0.3s;
 }
@@ -64,6 +46,23 @@ body {
     color: #000;
     z-index: 999;
 }
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff; /* Set content background color */
+    border-radius: 10px; /* Add border radius */
+    margin: 20px; /* Add margin for spacing */
+}
+
+.profile-img {
+    width: 150px; /* Set image width */
+    height: 150px; /* Set image height */
+    border-radius: 50%; /* Create circular image */
+    margin-bottom: 20px; /* Add margin below image */
+}
+
 .centered {
     text-align: center; /* Center text horizontally */
+    color: #000000; /* Set text color */
 }
