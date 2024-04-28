@@ -111,4 +111,21 @@ body, html {
     height: auto; /* Allows the height to adjust proportionally to the width */
 }
 
+.hidden {
+    display: none;
+}
 
+      /* Added CSS to style the section titles as buttons */
+      .section-title {
+        cursor: pointer;
+        padding: 5px 10px;
+        background-color: #f0f0f0;
+       
+        border-radius: 5px;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+
+    .section-title:hover {
+        background-color: #e0e0e0;
+    }
