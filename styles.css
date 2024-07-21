@@ -32,7 +32,7 @@ body, html {
 }
 
 .sidebar a:hover {
-    color: #f1f1f1;
+    color: #a0a0a0;
 }
 
 #sidebarToggle {
@@ -46,15 +46,13 @@ body, html {
     color: #000;
     z-index: 999;
 }
-
 .content {
-    flex: 1;
-    padding: 20px;
-    background-color: #ffffff; /* Set content background color */
-    border-radius: 10px; /* Add border radius */
-    margin: 20px; /* Add margin for spacing */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+    padding: 30px; /* Increase padding around the content */
+    margin: 20px auto; /* Center the content horizontally */
+    background-color: #f9f9f9; /* Add a light background color */
+    border-radius: 10px; /* Round the corners */
 }
+
 
 .profile {
     text-align: center;
@@ -62,15 +60,15 @@ body, html {
 }
 
 .profile h1 {
-    color: #333; /* Set profile heading color */
-    margin-bottom: 10px; /* Add margin below profile heading */
+    font-size: 2rem; /* Increase heading font size */
+    font-weight: bold; /* Make heading bold */
 }
 
 #info {
-    font-size: 1.1rem; /* Adjust font size */
-    line-height: 1.6; /* Adjust line height for readability */
-    color: #555; /* Set text color */
+    font-size: 1.2rem; /* Increase font size slightly */
+    line-height: 1.8; /* Adjust line height for better readability */
 }
+
 
 #info p {
     margin-bottom: 20px; /* Add margin below paragraphs */
@@ -99,6 +97,10 @@ body, html {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px; /* Adds some space between the paragraphs and images */
+    background-color: #f2f2f2; /* Add a light background color */
+    padding: 20px; /* Add padding inside the background */
+    border-radius: 10px; /* Round the corners */
+
 }
 
 .paragraph-with-image p {
@@ -106,8 +108,15 @@ body, html {
 }
 
 .paragraph-with-image img {
-    width: 150px; /* Sets the width of the image */
+    max-width: 100%; /* Set the maximum width of the image to 100% of its container */
     height: auto; /* Allows the height to adjust proportionally to the width */
+    max-height: 300px; /* Set a maximum height for the image */
 }
 
 
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 20px; /* Decrease padding for smaller screens */
+    }
+}
