@@ -4,27 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Corben:wght@700&family=Nobile:wght@400&display=swap"
+        rel="stylesheet">
+
     <title>About Nick Barrie</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="content">
-            <button id="sidebarToggle">&#x22EE;</button>
-            <div class="centered">
-                <img src="Images/profile.jpg" alt="Nick Barrie" class="centered profile-img">
-                <h1 class="centered">Nick Barrie</h1>
-            </div>
+    <button id="sidebarToggle">&#x22EE;</button>
+    <section class="bubble">
+       
+        <div class="centered">
+
+            <h1 class="centered">Nick Barrie</h1>
+            <img src="Images/profile.jpg" alt="Nick Barrie" class="centered profile-img">
+            <p>Computer Science Student</p>
             <div id="info" class="content">
                 <!-- Your info grid content here -->
                 <p>Welcome to my personal website!</p>
                 <p>This site serves as an online resume.</p>
-                <p>Feel free to explore the site and learn more about me.</p>
+                <p>Feel free to explore the site to learn more about me.</p>
             </div>
         </div>
+    </section>
     </div>
     <script src="sidebar.js"></script>
 </body>
 
 </html>
+
+<style>
+.sidebar {
+    height: 100vh;
+    width: 0;
+    background-color: #5c5a5a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff; /* Set text color */
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #a0a0a0;
+}
+
+#sidebarToggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: #000;
+    z-index: 999;
+}
+
+    body {
+        font-family: 'Nobile', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        background-color: #3f3f4c;
+        color: #333;
+    }
+
+    .centered {
+        top : 60%;
+        text-align: center;
+        position: relative;
+        color: #ffffff;
+
+    }
+
+
+    .profile-img {
+        width: 300px;
+
+        height: 300px;
+
+        border-radius: 50%;
+
+        padding: 10%;
+        margin-top: 20px;
+
+        display: block;
+
+        margin: auto;
+
+    }
+
+    .bubble::after {
+        content: '';
+        border-top-left-radius: 100% 40%;
+        border-top-right-radius: 100% 40%;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        width: 100%;
+        background-color: #0f0f10;
+        height: 90%;
+ 
+    }
+
+    </styles>
