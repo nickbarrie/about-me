@@ -4,117 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Corben:wght@700&family=Nobile:wght@400&display=swap"
-        rel="stylesheet">
-
     <title>About Nick Barrie</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
-    <button id="sidebarToggle">&#x22EE;</button>
-    <section class="bubble">
-       
-        <div class="centered">
 
-            <h1 class="centered">Nick Barrie</h1>
-            <img src="Images/profile.jpg" alt="Nick Barrie" class="centered profile-img">
-            <p>Computer Science Student</p>
-            <div id="info" class="content">
-                <!-- Your info grid content here -->
-                <p>Welcome to my personal website!</p>
-                <p>This site serves as an online resume.</p>
-                <p>Feel free to explore the site to learn more about me.</p>
+
+    <div class="container">
+        <button id="sidebarToggle">&#x22EE;</button>
+
+
+        <div class="profile-details">
+            <h1>Nick Barrie</h1>
+            <h2>Computer Science Student</h2>
+
+            <img src="Images/profile.jpg" alt="Nick Barrie" class="profile-img">
+            <div class="social-links">
+                <a href="mailto:nbarrie2@uwo.ca" class="icon-link"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/nick-w-barrie/" class="icon-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/nickbarrie" class="icon-link"><i class="fab fa-github"></i></a>
             </div>
+
         </div>
-    </section>
+        </section>
+
+        <section class="content">
+            <h2>About</h2>
+            <p>A Computer Science undergraduate student with an anticipated graduation date of April 2025, I am
+                seeking employment as a full-stack developer. I have experience through a 16-month internship at J.D.
+                Power, 4 months at Lambton-Kent District School Board IT, and various projects.</p>
+
+
+            <div class="item">
+                <h3>Quality Assurance Automation Analyst J.D. Power </h3>
+                <p>2023 - 2024</p>
+                <p>Deployed and tested components supporting the backend of Stellantis sites such Jeep.com.
+                    Wrote automated tests for smoke and sanity tests. Worked closely with developers and solution
+                    analysts to ensure services provided alligned with business requirements. </p>
+
+                <li>Java</li>
+                <li>Serenity BDD </li>
+                <li>Postman</li>
+                <li>Git</li>
+                <li>Linux</li>
+                <li>Kubernetes</li>
+                <li>RabbitMQ</li>
+                <li>ElasticSearch</li>
+                <li>SQL</li>
+                <li>JavaScript</li>
+                <li>Jira</li>
+            </div>
+            <div class="item">
+                <h3>Student Record Management Lambton-Kent District School Board IT </h3>
+                <p>MAY - AUG 2022</p>
+                <p>Assisted in the management of student records. Supported the IT department with various tasks.</p>
+                <li>Laserfiche</li>
+            </div>
+
+            <div class="item">
+                <h3>The University of Western Ontario</h3>
+                <p>Anticipated Graduation: April 2025<br>B.S. Honors Specialization
+                    in
+                    Computer Science with a Minor in Software Engineering</p>
+                <p>Other Relevant Education: Amazon Web Services Developing on AWS</p>
+
+                <li>Java</li>
+                <li>C</li>
+                <li>Python </li>
+                <li>SQL</li>
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Git</li>
+                <li>Linux</li>
+
+
+            </div>
+
+            <div class="item">
+                <h3>Projects</h3>
+                <p>Various projects can be found on my GitHub page. </p>
+                <li>Java</li>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Git</li>
+                <li>Linux</li>
+        </section>
     </div>
     <script src="sidebar.js"></script>
 </body>
 
 </html>
-
-<style>
-.sidebar {
-    height: 100vh;
-    width: 0;
-    background-color: #5c5a5a;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #ffffff; /* Set text color */
-    display: block;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    color: #a0a0a0;
-}
-
-#sidebarToggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 30px;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    color: #000;
-    z-index: 999;
-}
-
-    body {
-        font-family: 'Nobile', sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        background-color: #3f3f4c;
-        color: #333;
-    }
-
-    .centered {
-        top : 60%;
-        text-align: center;
-        position: relative;
-        color: #ffffff;
-
-    }
-
-
-    .profile-img {
-        width: 300px;
-
-        height: 300px;
-
-        border-radius: 50%;
-
-        padding: 10%;
-        margin-top: 20px;
-
-        display: block;
-
-        margin: auto;
-
-    }
-
-    .bubble::after {
-        content: '';
-        border-top-left-radius: 100% 40%;
-        border-top-right-radius: 100% 40%;
-        position: absolute;
-        bottom: 0;
-        z-index: -1;
-        width: 100%;
-        background-color: #0f0f10;
-        height: 90%;
- 
-    }
-
-    </styles>

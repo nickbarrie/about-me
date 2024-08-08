@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const sidebarContent = `
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
     `;
 
     sidebar.innerHTML = sidebarContent;
