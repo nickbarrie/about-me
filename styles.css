@@ -122,6 +122,16 @@ h1, h2, h3 {
     color: #0073b1; /* Change color on hover */
 }
 
+.p-link:hover {
+    color: #0073b1; /* Change color on hover */
+}
+
+.p-link {
+    color: #f9faffe4;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+
 
 p {
     margin: 5px 0 0 0;
