@@ -104,7 +104,7 @@ function animateCodeElement(element) {
     let x = rect.left;
     let y = rect.top;
     let speedX = (Math.random() - 0.5) * 2;
-    let speedY = (Math.random() - 0.5) * 2;
+    let speedY = 0;
 
     function move() {
         rect = element.getBoundingClientRect();
