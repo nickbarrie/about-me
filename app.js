@@ -90,8 +90,11 @@ function positionCodeElementWithinBounds(element) {
     const elemHeight = element.offsetHeight;
 
     const maxX = window.innerWidth - elemWidth;
-    const maxY = document.documentElement.scrollHeight - elemHeight;
+    var maxY = document.documentElement.scrollHeight - elemHeight;
 
+    if(maxY > 1500){
+        maxY = 1500;
+    }
     const x = Math.random() * maxX;
     const y = Math.random() * maxY;
 
