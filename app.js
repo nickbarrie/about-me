@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "https://api.github.com/repos/nickbarrie/CrashRecovery/contents/src/crashRecovery/main",
         "https://api.github.com/repos/nickbarrie/car-detailing/contents/frontend/src/components",
         "https://api.github.com/repos/nickbarrie/particle-sim/contents",
-        "https://api.github.com/repos/nickbarrie/HomeHive/contents"
+        "https://api.github.com/repos/nickbarrie/HomeHive/contents",
+        "https://api.github.com/repos/nickbarrie/Pygame-tennis/contents"
     ];
 
     // Function to process each repository
@@ -88,13 +89,13 @@ function positionCodeElementWithinBounds(element) {
     const elemWidth = element.offsetWidth;
     const elemHeight = element.offsetHeight;
 
-    const maxX = window.innerWidth - elemWidth;
-    const maxY = window.innerHeight - elemHeight;
+    const maxX = document.documentElement.scrollWidth - elemWidth;
+    const maxY = document.documentElement.scrollHeight - elemHeight;
 
     const x = Math.random() * maxX;
     const y = Math.random() * maxY;
 
-    element.style.position = 'absolute'; 
+    element.style.position = 'absolute';
     element.style.left = `${x}px`;
     element.style.top = `${y}px`;
 }
