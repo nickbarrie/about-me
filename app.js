@@ -105,24 +105,31 @@ function positionCodeElementWithinBounds(element) {
 
 function animateCodeElement(element) {
     let rect = element.getBoundingClientRect();
-    let x = rect.left;
-    let y = rect.top;
-    let speedX = (Math.random() - 0.5) * 2;
-    let speedY = 0;
+    let baseX = rect.left;
+    let baseY = rect.top;
+    let x = 0;
+    let y = 0;
+
+    // Define the radius of the area within which the element will hover
+    const hoverRadius = 20;
+
+    // Define the speed of movement
+    let angle = 0; // Start angle
+    const speed = 0.01; // Slow speed
 
     function move() {
-        rect = element.getBoundingClientRect();
-        x += speedX;
-        y += speedY;
+        // Update angle for smooth, circular movement
+        angle += speed;
 
-        // Keep element within the visible screen bounds
-        if (x < 0 || x + rect.width > window.innerWidth) speedX *= -1;
-        if (y < 0 || y + rect.height > window.innerHeight) speedY *= -1;
+        // Calculate new x and y offsets within the radius
+        x = Math.cos(angle) * hoverRadius;
+        y = Math.sin(angle) * hoverRadius;
 
+        // Apply the transformation relative to the base position
         element.style.transform = `translate(${x}px, ${y}px)`;
+
         requestAnimationFrame(move);
     }
 
     move();
 }
-

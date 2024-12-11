@@ -9,14 +9,6 @@
     color: #fff;
 }
 
-.profile-img {
-    width: 80%;
-    height: auto;
-    border-radius: 50%;
-    padding: 10%;
-    margin-top: 20px;
-    display: block;
-}
 
 
 .item img {
@@ -67,22 +59,28 @@
 }
 
 .item li {
-    background-color: #023037;
+    background-color: #4984f1;
     border-radius: 20px;
     padding: 5px 10px;
     margin: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    color: #3effe9;
+    color: #ffffff;
     display: inline-block;
 }
 
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Doppio One", sans-serif;
     line-height: 1.6;
     margin: 0;
-    background-color: #0f172b;
+    background-color: #141516;
     color: #848696;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 .hidden {
@@ -108,10 +106,20 @@ h1, h2, h3 {
     margin: 0;
     color: #f9faffe4;
 }
+
+h1{
+    font-size: 5rem;
+    text-align: left;
+}
+
+h2{
+    font-size: 2rem;
+    text-align: left;
+}
 .item-link {
     color: #f9faffe4;
     text-decoration: none; /* Remove underline */
-    font-size: 1.3rem; /* Adjust the font size */
+    font-size: 1.8rem; /* Adjust the font size */
     display: inline-flex; /* Align items horizontally */
     align-items: center; /* Center items vertically */
     gap: 5px; /* Space between text and icon */
@@ -135,7 +143,7 @@ h1, h2, h3 {
 
 p {
     margin: 5px 0 0 0;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     color: #9e9e9e;
 }
 
@@ -153,11 +161,64 @@ p {
     opacity: 0.8;
 }
 
+.profile-gradient-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    height: fit-content;
+  }
+  
+  .profile-img {
+    display: block;
+    width: 80%; /* Adjust as needed */
+    height: auto;
+    border-radius: 50%;
+    padding: 10%;
+    -webkit-mask-image: radial-gradient(circle, #626262 10%, #aaa 100%);
+    mask-image: radial-gradient(circle, #626262 10%, #aaa 100%);
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+
+
+  
+  .profile-gradient-wrapper::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Ensures the glow is circular */
+    background: radial-gradient(circle, #d4960e, #4984f1);
+    z-index: -1;
+    filter: blur(35px);
+    animation: gradient-shift 5s ease-in-out infinite;
+    background-size: 200% 200%; /* For animated shifting effect */
+  }
+  
+  /* Optional animation reuse */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
 
 @media screen and (min-width: 768px) {
     .container {
         flex-direction: row; /* Row layout for wider screens */
         align-items: flex-start;
+        width: 100%;
     }
 
     .profile-details {
@@ -183,6 +244,7 @@ p {
         border-radius: 10px;
         z-index: 1;
     }
+    
 
     
 }
