@@ -158,10 +158,8 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     nextButton.addEventListener('click', moveToNextSlide);
     prevButton.addEventListener('click', moveToPrevSlide);
 
-    // Autoplay
     let autoplay = setInterval(moveToNextSlide, intervalTime);
 
-    // Pause autoplay on hover
     carousel.addEventListener('mouseover', () => clearInterval(autoplay));
     carousel.addEventListener('mouseleave', () => autoplay = setInterval(moveToNextSlide, intervalTime));
 });
