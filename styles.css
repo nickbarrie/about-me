@@ -81,6 +81,10 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
+    font-variant-ligatures: none;
+    -webkit-font-variant-ligatures: none;
+    font-feature-settings: "liga" 0;
+  
 }
 
 .hidden {
