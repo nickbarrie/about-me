@@ -139,7 +139,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     const nextButton = carousel.querySelector('.next');
     const prevButton = carousel.querySelector('.prev');
     let currentIndex = 0;
-    const intervalTime = 8000; 
+    const intervalTime = 10000; 
 
     function updateSlidePosition() {
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
