@@ -248,3 +248,73 @@ p {
 
     
 }
+
+.carousel {
+    max-width: 800px;
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  
+  .carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
+    background: #000;
+    position: relative;
+    padding: 1rem;
+    height: 600px; /* Adjust slide height as needed */
+    width: 100%;
+    align-items: center;
+  }
+  
+  /* This will ensure images, videos, and iframes fit within the slide */
+  .carousel-slide img,
+  .carousel-slide video {
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    object-fit: contain;
+    max-width: 80%;
+    max-height: 90%;
+    width: auto;
+    height: 80;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+  
+    
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem;
+    border-radius: 50%;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+
+

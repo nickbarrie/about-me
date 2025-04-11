@@ -133,3 +133,36 @@ function animateCodeElement(element) {
 
     move();
 }
+document.querySelectorAll('.carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = carousel.querySelector('.next');
+    const prevButton = carousel.querySelector('.prev');
+    let currentIndex = 0;
+    const intervalTime = 4000; // Change image every 4 seconds
+
+    function updateSlidePosition() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function moveToNextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlidePosition();
+    }
+
+    function moveToPrevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlidePosition();
+    }
+
+    nextButton.addEventListener('click', moveToNextSlide);
+    prevButton.addEventListener('click', moveToPrevSlide);
+
+    // Autoplay
+    let autoplay = setInterval(moveToNextSlide, intervalTime);
+
+    // Pause autoplay on hover
+    carousel.addEventListener('mouseover', () => clearInterval(autoplay));
+    carousel.addEventListener('mouseleave', () => autoplay = setInterval(moveToNextSlide, intervalTime));
+});
+
