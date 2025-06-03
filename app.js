@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "https://api.github.com/repos/nickbarrie/CrashRecovery/contents/src/crashRecovery/main",
         "https://api.github.com/repos/nickbarrie/car-detailing/contents/frontend/src/components",
         "https://api.github.com/repos/nickbarrie/particle-sim/contents",
-        "https://api.github.com/repos/nickbarrie/HomeHive/contents",
+        "https://github.com/nickbarrie/ImageBasedSatelliteTracking",
         "https://api.github.com/repos/nickbarrie/Pygame-tennis/contents"
     ];
 
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch(repoUrl)
             .then((response) => response.json())
             .then((data) => {
-                const codeFiles = data.filter(file => file.type === "file" && (file.name.endsWith(".js") || file.name.endsWith(".java") || file.name.endsWith(".c") || file.name.endsWith(".vue") || file.name.endsWith(".cpp")));
+                const codeFiles = data.filter(file => file.type === "file" && (file.name.endsWith(".js") || file.name.endsWith(".java") || file.name.endsWith(".c") || file.name.endsWith(".vue") || file.name.endsWith(".cpp")|| file.name.endsWith(".py")));
                 if (codeFiles.length > 0) {
                     const randomFile = codeFiles[Math.floor(Math.random() * codeFiles.length)];
                     fetch(randomFile.download_url)
@@ -85,53 +85,66 @@ function createFloatingCodeElement(codeSnippet, fileName) {
     animateCodeElement(codeElement);
 }
 
+const placedRects = []; // Global array to track placed code boxes
+
 function positionCodeElementWithinBounds(element) {
+    const maxAttempts = 20;
+    const buffer = 20; // Extra space between elements
+
+    document.body.appendChild(element); // Temporarily add to measure size
     const elemWidth = element.offsetWidth;
     const elemHeight = element.offsetHeight;
 
     const maxX = window.innerWidth - elemWidth;
-    var maxY = document.documentElement.scrollHeight - elemHeight;
+    const maxY = Math.min(document.documentElement.scrollHeight - elemHeight, 1500);
 
-    if(maxY > 1500){
-        maxY = 1500;
+    let placed = false;
+
+    for (let i = 0; i < maxAttempts && !placed; i++) {
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
+
+        const newRect = {
+            left: x - buffer,
+            top: y - buffer,
+            right: x + elemWidth + buffer,
+            bottom: y + elemHeight + buffer
+        };
+
+        // Check against all previously placed rects
+        const overlaps = placedRects.some(r =>
+            !(newRect.right < r.left || newRect.left > r.right || newRect.bottom < r.top || newRect.top > r.bottom)
+        );
+
+        if (!overlaps) {
+            element.style.position = 'absolute';
+            element.style.left = `${x}px`;
+            element.style.top = `${y}px`;
+            placedRects.push(newRect);
+            placed = true;
+        }
     }
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
 
-    element.style.position = 'absolute';
-    element.style.left = `${x}px`;
-    element.style.top = `${y}px`;
+    if (!placed) {
+        console.warn("Could not find non-overlapping position.");
+        element.remove(); // Optional: Remove or let it overlap
+    }
 }
 
+
 function animateCodeElement(element) {
-    let rect = element.getBoundingClientRect();
-    let baseX = rect.left;
-    let baseY = rect.top;
-    let x = 0;
-    let y = 0;
+    let offset = 0;
+    const amplitude = 8;
+    const speed = 0.02;
 
-    // Define the radius of the area within which the element will hover
-    const hoverRadius = 20;
-
-    // Define the speed of movement
-    let angle = 0; // Start angle
-    const speed = 0.01; // Slow speed
-
-    function move() {
-        // Update angle for smooth, circular movement
-        angle += speed;
-
-        // Calculate new x and y offsets within the radius
-        x = Math.cos(angle) * hoverRadius;
-        y = Math.sin(angle) * hoverRadius;
-
-        // Apply the transformation relative to the base position
-        element.style.transform = `translate(${x}px, ${y}px)`;
-
-        requestAnimationFrame(move);
+    function float() {
+        offset += speed;
+        const y = Math.sin(offset) * amplitude;
+        element.style.transform = `translateY(${y}px)`;
+        requestAnimationFrame(float);
     }
 
-    move();
+    float();
 }
 document.querySelectorAll('.carousel').forEach(carousel => {
     const track = carousel.querySelector('.carousel-track');
@@ -163,4 +176,20 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     carousel.addEventListener('mouseover', () => clearInterval(autoplay));
     carousel.addEventListener('mouseleave', () => autoplay = setInterval(moveToNextSlide, intervalTime));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const titles = ["Software Developer", "QA Analyst"];
+    const titleElement = document.getElementById("rotating-title");
+    let index = 0;
+
+    setInterval(() => {
+        titleElement.style.opacity = 0;
+        setTimeout(() => {
+            index = (index + 1) % titles.length;
+            titleElement.textContent = titles[index];
+            titleElement.style.opacity = 1;
+        }, 500); // Match the CSS transition duration
+    }, 8000);
+});
+
 
