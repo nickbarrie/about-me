@@ -178,7 +178,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const titles = ["Software Developer", "QA Analyst"];
+    const titles = ["Software Developer", "QA Analyst", "Certified Tester"];
     const titleElement = document.getElementById("rotating-title");
     let index = 0;
 
